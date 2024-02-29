@@ -1,19 +1,8 @@
 console.log("TRAIN AREA");
-/*E-TASK: 
-
-Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
-MASALAN: getReverse("hello") return qilsin "olleh".
-1. Function yaratish
-2. stringni arrayga otkazish
-3. arrayni reverse qilish va natijani string uchun join qilish 
-4. return qaytarish
-
-@MITASK
+/*
+H-TASK: 
+shunday function tuzing, 
+u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
+MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 */
 
-function getReverse (str:string) {
-   const arr = str.split("");
-   const new_str = arr.reverse().join('');
-   return new_str;
-}
-console.log(getReverse("hello"));
