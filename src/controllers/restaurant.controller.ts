@@ -35,5 +35,24 @@ restaurantContoller.getSignup = (req: Request, res: Response) => {
 
 };
 
+restaurantContoller.processLogin = (req: Request, res: Response) => {
+    try {
+        console.log("processLogin");
+        res.send("DONE");
+    } catch (err) {
+        console.log("Error, processLogin", err);
+    }
+
+};
+
+restaurantContoller.processSignup = (req: Request, res: Response) => {
+    try {
+        console.log("processSignup");
+        res.send("DONE");
+    } catch (err) {
+        console.log("Error, processSignup", err);
+    }
+
+};
 
 export default restaurantContoller;
