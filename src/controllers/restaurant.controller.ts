@@ -7,6 +7,7 @@ const restaurantContoller: T = {};
 //Bu yerda controllarga tegishli methodlarni qurib olamiz
 restaurantContoller.goHome = (req: Request, res: Response) => {
     try {
+        console.log("goHome");
         res.send("Homepage");
     } catch (err)  {
         console.log("Error, goHome", err);
@@ -16,6 +17,7 @@ restaurantContoller.goHome = (req: Request, res: Response) => {
 
 restaurantContoller.getLogin = (req: Request, res: Response) => {
     try {
+        console.log("getLogin");
         res.send("Login Page");
     } catch (err) {
         console.log("Error, getLogin", err);
@@ -25,6 +27,7 @@ restaurantContoller.getLogin = (req: Request, res: Response) => {
 
 restaurantContoller.getSignup = (req: Request, res: Response) => {
     try {
+        console.log("getSignup");
         res.send("Signup Page");
     } catch (err) {
         console.log("Error, getSignup", err);

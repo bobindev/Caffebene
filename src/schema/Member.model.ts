@@ -28,7 +28,7 @@ const memberSchema = new Schema({
 
     memberPassword: {
         type: String,
-        select: false,
+        select: false, //maxfiy ma'lumot qilinb qo'yiladi shu sabbli u berilmaydi
         required: true,
     }, 
     memberAddress: {
