@@ -2,6 +2,8 @@
 import { Request, Response } from 'express';
 import { T } from "../libs/types/common";
 import MemberService from "../models/Model.service";
+import { MemberInput } from '../libs/types/member';
+import { MemberType } from '../libs/enums/member.enum';
 
 const restaurantContoller: T = {};
 //Bu yerda controllarga tegishli methodlarni qurib olamiz
@@ -31,6 +33,7 @@ restaurantContoller.getSignup = (req: Request, res: Response) => {
         res.send("Signup Page");
     } catch (err) {
         console.log("Error, getSignup", err);
+        res.send(err);
     }
 
 };
@@ -45,10 +48,17 @@ restaurantContoller.processLogin = (req: Request, res: Response) => {
 
 };
 
-restaurantContoller.processSignup = (req: Request, res: Response) => {
+restaurantContoller.processSignup = async(req: Request, res: Response) => {
     try {
         console.log("processSignup");
-        res.send("DONE");
+        console.log("body:", req.body);
+
+        const newMember: MemberInput = req.body;
+        newMember.memberType = MemberType.RESTAURANT;
+
+        const memberService = new MemberService();
+        const result = await memberService.processSignup(newMember);
+        res.send(result);
     } catch (err) {
         console.log("Error, processSignup", err);
     }
