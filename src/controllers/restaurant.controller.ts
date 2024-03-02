@@ -1,7 +1,7 @@
 // controllerlar har doim object lar orqali hosil qilinadi
 import { Request, Response } from 'express';
 import { T } from "../libs/types/common";
-import MemberService from "../models/Model.service";
+import MemberService from "../models/Member.service";
 import { MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
 
@@ -61,6 +61,7 @@ restaurantContoller.processSignup = async(req: Request, res: Response) => {
         res.send(result);
     } catch (err) {
         console.log("Error, processSignup", err);
+        res.send(err);
     }
 
 };
