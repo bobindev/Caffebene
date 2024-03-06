@@ -1,26 +1,18 @@
 console.log("TRAIN AREA");
 /*
-H-TASK: 
-shunday function tuzing, 
-u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
-MASALAN: getPositive([1, -4, 2]) return qiladi "12"
+I-TASK: 
 
-Arithmetic:
-1. function yaratish
-2. o'zgaruvchi hosil qilish
-3. loop yaratish
-4. in condition: agar qiymat musbat bo'lsa, o'zgaruvchiga qiymat olish
-5. o'zgaruvchiga qiymat qo'shish
-6. qiymatni return qilish
-
+Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+MASALAN: getDigits("m14i1t") return qiladi "141"
 */
-function getPositive(arr: any) {
-    let result = "";
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > 0) {
-        result += arr[i];
+
+function getDigits(str: any): any {
+  let new_str = '';
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] >= 0 && str[i] <= 9){
+          new_str+=str[i];
       }
-    } return result;
-  }
-  
-  console.log(getPositive([1, -4, 2])); 
+  }return new_str;
+ 
+}
+console.log(getDigits("m14i1t"));
