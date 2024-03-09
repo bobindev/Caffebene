@@ -1,18 +1,14 @@
 console.log("TRAIN AREA");
-/*
-I-TASK: 
+//Task-J
 
-Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
-MASALAN: getDigits("m14i1t") return qiladi "141"
-*/
+function findLongestWord(str: string) {
+  var words = str.split(" ");
+  var longest = "";
 
-function getDigits(str: any): any {
-  let new_str = '';
-  for (let i = 0; i < str.length; i++) {
-      if (str[i] >= 0 && str[i] <= 9){
-          new_str+=str[i];
-      }
-  }return new_str;
- 
+  for (var word of words) {
+    if (word.length > longest.length) longest = word;
+  }
+
+  return longest;
 }
-console.log(getDigits("m14i1t"));
+console.log(findLongestWord("I come from Uzbekistan"));
