@@ -21,6 +21,8 @@ routerAdmin.get('/signup', restaurantContoller.getSignup
     // }
 ).post("/signup", restaurantContoller.processSignup )
 
+routerAdmin.get('/logout', restaurantContoller.logout);
+
 routerAdmin.get('/check-me', restaurantContoller.checkAuthSession);
 
 //Product
