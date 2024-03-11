@@ -12,7 +12,7 @@ const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
     uri: String(process.env.MONGO_URL),
     collection: "session"
-})
+});
 
 //1-ENTRANCE
 const app = express();
@@ -33,6 +33,7 @@ app.use(
     saveUninitialized: true
 })
 );
+// Bu yerda seesion tashkil etilgandan keyin "router-admin"dagi signup va login jarayonida sessionlarni tashkil etishni talab qilamiz
 
 //3-VIEWS
 app.set("views", path.join(__dirname, "views"));

@@ -1,14 +1,18 @@
 console.log("TRAIN AREA");
-//Task-J
+/*K-TASK: 
 
-function findLongestWord(str: string) {
-  var words = str.split(" ");
-  var longest = "";
+Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
+MASALAN: countVowels("string") return 1;*/
 
-  for (var word of words) {
-    if (word.length > longest.length) longest = word;
+function countVowels (str:string) {
+  let numVowel = 0;
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  for (let char of str) {
+    if(vowels.includes(char)) {
+      numVowel++;
+    }
   }
-
-  return longest;
+  return numVowel;
 }
-console.log(findLongestWord("I come from Uzbekistan"));
+console.log(countVowels('string'));
+
