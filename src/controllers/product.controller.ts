@@ -21,6 +21,7 @@ productContoller.getAllProducts = async (req: Request, res: Response) => {
 productContoller.createNewProducts = async (req: Request, res: Response) => {
     try {
         console.log("createNewProducts"); 
+        res.send("DONE");
     } catch (err) {
         console.log("Error, createNewProducts:", err);
         if (err instanceof Errors) res.status(err.code).json(err);
