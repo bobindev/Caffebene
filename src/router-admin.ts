@@ -27,9 +27,10 @@ routerAdmin.get('/logout', restaurantContoller.logout);
 routerAdmin.get('/check-me', restaurantContoller.checkAuthSession);
 
 //Product
-routerAdmin.get('/product/all', productContoller.getAllProducts);
-routerAdmin.post('/product/create', productContoller.createNewProducts);
-routerAdmin.post('/product/:id', productContoller.updateChosenProducts);
+routerAdmin.get('/product/all', restaurantContoller.verifyRestaurant,
+productContoller.getAllProducts);
+routerAdmin.post('/product/create', restaurantContoller.verifyRestaurant, productContoller.createNewProducts);
+routerAdmin.post('/product/:id', restaurantContoller.verifyRestaurant, productContoller.updateChosenProducts);
 
 //User
 
