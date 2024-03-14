@@ -1,18 +1,16 @@
 console.log("TRAIN AREA");
-/*K-TASK: 
+/*
+L-TASK: 
 
-Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
-MASALAN: countVowels("string") return 1;*/
+Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";   
+*/
 
-function countVowels (str:string) {
-  let numVowel = 0;
-  let vowels = ['a', 'e', 'i', 'o', 'u'];
-  for (let char of str) {
-    if(vowels.includes(char)) {
-      numVowel++;
-    }
-  }
-  return numVowel;
+function reverseSentence (str: any) {
+  
+  return str.split("").reverse().join("").split(" ").reverse().join(" ")
+
 }
-console.log(countVowels('string'));
+
+console.log(reverseSentence("we like coding!") );
 
