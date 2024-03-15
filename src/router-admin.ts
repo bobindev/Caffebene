@@ -23,7 +23,6 @@ routerAdmin.get('/signup', restaurantContoller.getSignup
     // }
 ).post("/signup", 
 makeUploader("members").single("memberImage"), 
-
 restaurantContoller.processSignup );
 
 routerAdmin.get('/logout', restaurantContoller.logout);
