@@ -3,6 +3,8 @@ const routerAdmin = express.Router();
 import restaurantContoller from './controllers/restaurant.controller';
 import productContoller from './controllers/product.controller';
 import makeUploader from './libs/utils/uploader';
+import restaurantController from './controllers/restaurant.controller';
+import productController from './controllers/product.controller';
 
 //Restaurant
 routerAdmin.get('/', restaurantContoller.goHome
@@ -38,7 +40,12 @@ routerAdmin.post('/product/create', restaurantContoller.verifyRestaurant,
 makeUploader("products").array("productImages", 5),
 productContoller.createNewProducts);
 
-routerAdmin.post('/product/:id', restaurantContoller.verifyRestaurant, productContoller.updateChosenProducts);
+
+routerAdmin.post(
+    "/product/:id", 
+    restaurantContoller.verifyRestaurant, 
+    productContoller.updateChosenProduct
+  );
 
 //User
 
