@@ -7,44 +7,44 @@ import restaurantController from './controllers/restaurant.controller';
 import productController from './controllers/product.controller';
 
 //Restaurant
-routerAdmin.get('/', restaurantContoller.goHome
+routerAdmin.get('/', restaurantController.goHome
     // (req: Request, res: Response) => {
     //     res.send("Homepage");
     // }
 );
 
-routerAdmin.get('/login', restaurantContoller.getLogin
+routerAdmin.get('/login', restaurantController.getLogin
     // (req: Request, res: Response) => {
     //     res.send("Login Page");
     // }
-).post('/login', restaurantContoller.processLogin);
+).post('/login', restaurantController.processLogin);
 
-routerAdmin.get('/signup', restaurantContoller.getSignup
+routerAdmin.get('/signup', restaurantController.getSignup
     // (req: Request, res: Response) => {
     //     res.send("Signup Page");
     // }
 ).post("/signup", 
 makeUploader("members").single("memberImage"), 
-restaurantContoller.processSignup );
+restaurantController.processSignup );
 
-routerAdmin.get('/logout', restaurantContoller.logout);
+routerAdmin.get('/logout', restaurantController.logout);
 
-routerAdmin.get('/check-me', restaurantContoller.checkAuthSession);
+routerAdmin.get('/check-me', restaurantController.checkAuthSession);
 
 //Product
-routerAdmin.get('/product/all', restaurantContoller.verifyRestaurant,
-productContoller.getAllProducts);
+routerAdmin.get('/product/all', restaurantController.verifyRestaurant,
+productController.getAllProducts);
 
-routerAdmin.post('/product/create', restaurantContoller.verifyRestaurant, 
+routerAdmin.post('/product/create', restaurantController.verifyRestaurant, 
 //makeUploader("products").single("productImage"),
 makeUploader("products").array("productImages", 5),
-productContoller.createNewProducts);
+productController.createNewProducts);
 
 
 routerAdmin.post(
     "/product/:id", 
-    restaurantContoller.verifyRestaurant, 
-    productContoller.updateChosenProduct
+    restaurantController.verifyRestaurant, 
+    productController.updateChosenProduct
   );
 
 //User

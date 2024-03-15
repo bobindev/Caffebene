@@ -3,6 +3,9 @@
     <div>
         <div>PRODUCTS PAGE</div>
         <div><%=member.memberNick%></div> <!--Murojatni kim bajarayotganini bilish uchun app.ts ga boriladi va  bitta midlewre tashkil etiladi.-->
+        <% products.map((value, key) => { %>
+            <p> <%= value.productName %> - <%= value.productSize %></p>
+        <% }) %>
 </div>
 </body>
 <%- include('includes/footer') %>
