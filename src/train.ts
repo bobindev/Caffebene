@@ -1,13 +1,15 @@
 console.log("TRAIN AREA");
-//TASK - N
+//TASK - O
 
-function palindromCheck(str:any) {
-
-  const reversedString = str.split('').reverse().join('');
-  if(str === reversedString)
-        return true;
-  else
-        return false;
-}
-
-console.log(palindromCheck ("kiyik"));
+function calculateSumOfNumbers(arr: any[]): any {
+      let sumeNumber = 0;
+      for (let i = 0; i < arr.length; i++) {
+          if (typeof arr[i] === "number"){
+            sumeNumber += arr[i];
+          }
+      }
+      return sumeNumber;
+  
+  }
+  
+  console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
