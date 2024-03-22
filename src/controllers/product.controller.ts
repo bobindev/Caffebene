@@ -17,7 +17,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     try {
         console.log("getAllProducts"); 
         const data = await productService.getAllProducts();
-        console.log("products:", data)
+        //console.log("products:", data)
 
         res.render("products", {products: data});
     } catch (err) {
@@ -31,7 +31,8 @@ productController.getAllProducts = async (req: Request, res: Response) => {
 productController.createNewProducts = async (req: AdminRequest, res: Response) => {
     try {
         console.log("createNewProducts"); 
-        console.log("req.files:", req.files);
+        console.log("req.body", req.body)
+        //console.log("req.files:", req.files);
         if (!req.files?.length) throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
         
         const data: ProductInput = req.body;
@@ -62,7 +63,7 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
       // console.log("id:", id);
   
       const result = await productService.updateChosenProducts(id, req.body);
-        console.log(result);
+        //console.log(result);
       // res.send(result);
       res.status(HttpCode.OK).json({data: result});
     } catch (err) {
