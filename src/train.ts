@@ -1,12 +1,16 @@
 console.log("TRAIN AREA");
 //TASK - Q
 
-function hasProperty(obj: any, str: string) {
-    const keys = Object.keys(obj);
-    if (keys.includes(str)) return true;
-    else return false;
-    
+function calculate (str: string) {
+    let arr = str.split("");
+    let sum = 0;
+   for(let i = 0; i < arr.length; i++){
+      const el = arr[i]; 
+      if(+el){
+         sum += +el;
+      };
+   };
+   return sum;  
 }
 
-const include = hasProperty({name: "BMW", model: "M3"}, "name");
-console.log(include);
+console.log(calculate("5+2"));
