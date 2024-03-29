@@ -1,16 +1,16 @@
 console.log("TRAIN AREA");
-//TASK - Q
+//TASK - S
 
-function calculate (str: string) {
-    let arr = str.split("");
-    let sum = 0;
-   for(let i = 0; i < arr.length; i++){
-      const el = arr[i]; 
-      if(+el){
-         sum += +el;
-      };
-   };
-   return sum;  
-}
+function missingNumber(arr: any) {
+   let min = Math.min(...arr);
+   let max = Math.max(...arr);
+   let result = [];
+   for (let i = min; i <= max; i++) {
+     if (!arr.includes(i)) {
+       result.push(i);
+     }
+   }
+   return result[0];
+ }
+ console.log(missingNumber([3, 0, 1]));
 
-console.log(calculate("5+2"));
