@@ -1,16 +1,12 @@
 console.log("TRAIN AREA");
-//TASK - S
+//TASK - T
 
-function missingNumber(arr: any) {
-   let min = Math.min(...arr);
-   let max = Math.max(...arr);
-   let result = [];
-   for (let i = min; i <= max; i++) {
-     if (!arr.includes(i)) {
-       result.push(i);
-     }
-   }
-   return result[0];
- }
- console.log(missingNumber([3, 0, 1]));
+function mergeSortedArrays (arr1: any[], arr2: any[]) {
+   const concat = arr1.concat(arr2);
+   concat.sort(function(a: number, b: number){return a-b});
+   return concat;
+}  
+
+console.log(mergeSortedArrays([0,3,4,31], [4,6,30]));
+
 
