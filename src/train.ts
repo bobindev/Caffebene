@@ -1,16 +1,20 @@
 console.log("TRAIN AREA");
-//TASK - U
+//TASK - V
 
-function sumOdds(num:number) {
-  let sum = 0;
-  for (let i = 0; i <= num; i++) {
-    if (i % 2 !== 0) {
-      sum ++;
-    }
-  }
-  return sum;
+function countChars(str: any) {
+  let obj:any = {};
+   for(let i=0;i<str.length;i++) {
+       if(obj[str[i]])
+           {
+               obj[str[i]]++; 
+           }
+       else
+       {
+           obj[str[i]]=1; 
+
+       }
+   }return obj;
 }
 
-console.log(sumOdds(9));
-
+console.log(countChars("hello"));
 
