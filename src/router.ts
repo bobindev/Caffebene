@@ -6,7 +6,7 @@ import memberContoller from './controllers/member.controller';
 router.post('/member/login', memberContoller.login);
 router.post("/member/signup", memberContoller.signup);
 router.post("/member/logout", memberContoller.verifyAuth, memberContoller.logout);
-router.get("/member/detail", memberContoller.verifyAuth);
+router.get("/member/detail", memberContoller.verifyAuth, memberContoller.getMemberDetail);
 
 /** Product**/
 
