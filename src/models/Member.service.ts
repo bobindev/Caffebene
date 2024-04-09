@@ -24,7 +24,6 @@ class MemberService {
             console.error("Error, model:signup", err)
             throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHON)
         }
-
     }
 
     public async login(input: LoginInput): Promise<Member> {
