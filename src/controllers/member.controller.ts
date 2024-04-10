@@ -1,7 +1,7 @@
 // controllerlar har doim object lar orqali hosil qilinadi
 import { NextFunction, Request, Response } from 'express';
 import { T } from "../libs/types/common"
-import { ExtendedRequest, LoginInput, Member, MemberInput } from '../libs/types/member';
+import { ExtendedRequest, LoginInput, Member, MemberInput, MemberUpdateInput } from '../libs/types/member';
 import MemberService from '../models/Member.service';
 import Errors, { HttpCode, Message } from '../libs/Errors';
 import AuthService from '../models/Auth.service';
@@ -55,31 +55,47 @@ memberContoller.login = async (req: Request, res: Response) => {
 
 };
 
-memberContoller.logout = (req: ExtendedRequest,res: Response) => {
-  try{
+memberContoller.logout = (req: ExtendedRequest, res: Response) => {
+  try {
     console.log("logout");
-    res.cookie("accessToken", null, {maxAge: 0, httpOnly: true});
-    res.status(HttpCode.OK).json({logout: true});
+    res.cookie("accessToken", null, { maxAge: 0, httpOnly: true });
+    res.status(HttpCode.OK).json({ logout: true });
 
-  }catch (err) {
+  } catch (err) {
     console.log("Error, login", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
 };
 
-memberContoller.getMemberDetail = async(req: ExtendedRequest,res: Response) => {
-  try{
+memberContoller.getMemberDetail = async (req: ExtendedRequest, res: Response) => {
+  try {
     console.log("getMemberDetail");
     const result = await memberService.getMemberDetail(req.member);
     res.status(HttpCode.OK).json(result);
 
-  }catch (err) {
+  } catch (err) {
     console.log("Error, getMemberDetail", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
 };
+
+memberContoller.updateMember = async (req: ExtendedRequest, res: Response) => {
+  try {
+    console.log("updateMember");
+    const input: MemberUpdateInput = req.body;
+    if (req.file) input.memberImage = req.file.path.replace(/\\/, "/");
+    const result = await memberService.updateMember(req.member, input);
+
+    res.status(HttpCode.OK).json(result);
+
+  } catch (err) {
+    console.log("Error, updateMember", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standard.code).json(Errors.standard);
+  }
+}
 
 memberContoller.verifyAuth = async (req: ExtendedRequest, res: Response, next: NextFunction) => {
   try {
@@ -88,7 +104,7 @@ memberContoller.verifyAuth = async (req: ExtendedRequest, res: Response, next: N
 
     if (!req.member) throw new Errors(HttpCode.UNAUTHORIZED, Message.NOT_AUTHENTICATED)
 
-   next();
+    next();
 
   } catch (err) {
     console.log("Error, verifyAuth", err);
@@ -98,8 +114,8 @@ memberContoller.verifyAuth = async (req: ExtendedRequest, res: Response, next: N
 }
 
 memberContoller.retrieveyAuth = async (
-  req: ExtendedRequest, 
-  res: Response, 
+  req: ExtendedRequest,
+  res: Response,
   next: NextFunction) => {
   try {
 
