@@ -1,15 +1,17 @@
 console.log("TRAIN AREA");
-//TASK - W
-
-function chunkArray(arr: any, num: number) {
-  let tempArray = [];
-  for (let i=0; i < arr.length; i += num) {
-      tempArray.push(arr.slice(i, i + num));
-  } return tempArray;
+//TASK - X
+function countOccurrences(obj:any, str:string, count:number) {
+  for (let key in obj) {
+    if (typeof obj[key] === 'object') {
+      return countOccurrences(obj[key], str, count);
+    } if (key === str) {
+      count++;
+    }
+  }
+  return count;
 
 }
-
-console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3));
+console.log(countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model', 0));
 
 
 
