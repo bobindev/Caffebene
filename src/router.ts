@@ -18,6 +18,7 @@ router.post("/member/update",
   uploader("members").single("memberImage"),
   memberContoller.updateMember);
 
+router.get("/member/top-users", memberContoller.getTopUsers)
 /** Product**/
 
 /** Orders**/
