@@ -1,17 +1,17 @@
 console.log("TRAIN AREA");
-//TASK - X
-function countOccurrences(obj:any, str:string, count:number) {
-  for (let key in obj) {
-    if (typeof obj[key] === 'object') {
-      return countOccurrences(obj[key], str, count);
-    } if (key === str) {
-      count++;
-    }
+//TASK - Y
+
+function findIntersection (arr1:any, arr2: any) {
+  let intersection = [];
+  for (let i=0; i<=arr1.length; i++) {
+     let ele = arr1[i];
+  if (arr2.indexOf(ele) !== -1 && intersection.indexOf(ele) === -1) {
+    intersection.push(ele);
   }
-  return count;
-
+  } 
+  return intersection;
 }
-console.log(countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model', 0));
 
+console.log(findIntersection([1,2,3], [3,2,0]));
 
 
