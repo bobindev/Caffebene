@@ -23,7 +23,10 @@ router.post("/member/update",
 router.get("/member/top-users", memberContoller.getTopUsers)
 
 /** Product**/
-router.get("/product/all", productController.getProducts)
+router.get("/product/all", productController.getProducts);
+router.get("/product/:id",
+  memberContoller.retrieveyAuth,
+  productController.getProduct);
 
 /** Orders**/
 
