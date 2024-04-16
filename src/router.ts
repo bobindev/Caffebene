@@ -32,6 +32,14 @@ router.get("/product/:id",
 /** Orders**/
 router.post("/order/create", 
 memberContoller.verifyAuth, 
-orderContoller.createOrder)
+orderContoller.createOrder);
+
+router.get("/order/all", 
+memberContoller.verifyAuth, 
+orderContoller.getMyOrders);
+
+router.post("/order/update", 
+memberContoller.verifyAuth, 
+orderContoller.updateOrder);
 
 export default router;
