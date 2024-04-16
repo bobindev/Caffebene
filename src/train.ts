@@ -1,17 +1,16 @@
 console.log("TRAIN AREA");
-//TASK - Y
+//TASK - Z
 
-function findIntersection (arr1:any, arr2: any) {
-  let intersection = [];
-  for (let i=0; i<=arr1.length; i++) {
-     let ele = arr1[i];
-  if (arr2.indexOf(ele) !== -1 && intersection.indexOf(ele) === -1) {
-    intersection.push(ele);
+function sumEvens(arr:any) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sum += arr[i];
+    }
   }
-  } 
-  return intersection;
+  return sum;
 }
 
-console.log(findIntersection([1,2,3], [3,2,0]));
+console.log(sumEvens([1, 2, 3, 4, 5]));
 
 
