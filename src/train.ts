@@ -1,16 +1,8 @@
 console.log("TRAIN AREA");
-//TASK - Z
+//TASK - ZA
 
-function sumEvens(arr:any) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      sum += arr[i];
-    }
-  }
-  return sum;
+function sortByAge(arr: any) {
+  return arr.sort((a: any, b: any) => a.age - b.age);
 }
 
-console.log(sumEvens([1, 2, 3, 4, 5]));
-
-
+console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
