@@ -1,17 +1,9 @@
 console.log("TRAIN AREA");
-//TASK - ZB
+//TASK - ZD
 
-function randomBetween (min:number, max:number) {
-  return Math.floor(Math.random() * (max - min)) + min;
+function changeNumberInArray(num1:number, arr:any, num2:number) {
+  arr[num1] = num2; 
+  return arr;
 }
 
-console.log(randomBetween(30,50));
-
-//TASK - ZC
-
-function celsiusToFahrenheit(cel:number) {
-  let fahren = (cel * 9/5) + 32;
-  return fahren;
-}
-
-console.log(celsiusToFahrenheit(0));
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
