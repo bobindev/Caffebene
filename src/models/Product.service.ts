@@ -25,7 +25,7 @@ class ProductService {
   /* SPA */
 
   public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
-    console.log("inquiry:", inquiry);
+    //console.log("inquiry:", inquiry);
     const match: T = { productStatus: ProductStatus.PROCESS };
     if (inquiry.productCollection)
       match.productCollection = inquiry.productCollection;
@@ -43,10 +43,10 @@ class ProductService {
       { $sort: sort },
       { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
       { $limit: inquiry.limit * 1 },
-    ]);
+    ]).exec()
 
-    if (!result.length) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+console.log(result)
     return result;
   }
 
@@ -95,7 +95,10 @@ class ProductService {
   public async getAllProducts(): Promise<Product[]> {
     //string => objectID
     const result = await this.productModel.find().exec();
+
+    
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
 
     // console.log("result: ", result);
     return result;

@@ -28,11 +28,6 @@ productController.getProducts = async (req: Request, res: Response) => {
 
     const result = await productService.getProducts(inquiry);
 
-    // const query = req.query;
-    // console.log("req.query:", query);
-
-    // const params = req.params;
-    // console.log("req.params:", params);
     res.status(HttpCode.OK).json(result);
 } catch (err) {
     console.log("Error, getProducts:", err)
