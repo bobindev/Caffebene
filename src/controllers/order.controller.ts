@@ -36,7 +36,7 @@ orderContoller.getMyOrders = async (req: ExtendedRequest, res: Response) => {
 
     res.status(HttpCode.CREATED).json(result);
   } catch (err) {
-    console.log("Error, getMyOrders:", err);
+    console.log("Error, getMyOrdersBackend:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }

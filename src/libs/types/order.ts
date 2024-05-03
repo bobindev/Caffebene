@@ -5,6 +5,7 @@ import { Product } from "./product";
 export interface OrderItem {
   _id: ObjectId;
   itemQuantity: number;
+  itemPrice: number;
   orderId: ObjectId;
   productId: ObjectId;
   createdAt: Date;
@@ -26,7 +27,6 @@ export interface Order {
 }
 
 export interface OrderItemInput {
-  reduce(arg0: (accumulator: number, item: OrderItemInput) => number, arg1: number): unknown;
   itemQuantity: number;
   itemPrice: number;
   productId: ObjectId;
