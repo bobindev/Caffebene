@@ -26,6 +26,7 @@ orderContoller.getMyOrders = async (req: ExtendedRequest, res: Response) => {
   try {
     console.log("getMyOrders");
     const {page, limit, orderStatus} = req.query;
+    console.log("typeof page: ", req.query)
     const inquiry: OrderInquiry = {
       page: Number(page),
       limit: Number(limit),
