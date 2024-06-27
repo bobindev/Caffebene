@@ -1,7 +1,7 @@
 {
-  "name": "burak",
+  "name": "caffebene",
   "version": "1.0.0",
-  "description": "This is burak project backend",
+  "description": "This is the backend for Caffebene project",
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node src/server.ts",

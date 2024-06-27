@@ -48,7 +48,7 @@ restaurantContoller.getLogin = (req: Request, res: Response) => {
 restaurantContoller.processSignup = async (req: AdminRequest, res: Response) => {
     try {
         console.log("processSignup");
-        console.log("req.body:", req.body)
+        console.log("req.body:", req.body);
         const file = req.file;     
         if (!file)
         throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
@@ -76,7 +76,7 @@ restaurantContoller.processLogin = async (req: AdminRequest, res: Response) => {
         console.log("processLogin");
 
         const input: LoginInput = req.body;
-        const result = await memberService.processLogin(input)
+        const result = await memberService.processLogin(input);
         //TODO: SESSIONS AUTHENTICATION
         req.session.member = result;
         req.session.save(function () {
