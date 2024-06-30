@@ -29,7 +29,7 @@
       <div class="board">
         <div class="dishes-table">
           <span class="new-dish-txt" style="margin-bottom: 30px">
-            RESTAURANT MENU
+            COFFEE-SHOP MENU
           </span>
           <table class="table table-bordered table-hover">
             <thead class="thead-light">
@@ -49,7 +49,7 @@
                 <td><%= key + 1 %></td>
                 <td><%= value.productName%></td>
                 <td><%= value.productCollection %></td>
-                <td><%= value.productCollection === 'COFFEE' ? value.productVolume : value.productSize %></td>
+                <td><%= value.productCollection === "FRUITJUICE" ? value.productVolume : value.productSize %></td>
                 <td><%= value.productPrice %></td>
                 <td><%= value.productLeftCount %></td>
                 <td>
@@ -133,7 +133,7 @@
             </div>
 
             <div class="half-input" id="product-collection">
-              <label>Dish Volume</label>
+              <label>Volume</label>
               <select class="product-size" name="productSize">
                 <option value="SMALL">Small</option>
                 <option value="NORMAL" selected>Normal</option>

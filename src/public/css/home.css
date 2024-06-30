@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+  background: linear-gradient(-45deg, #4b2e2a, #7b4b3a, #b39283, #d4b4a1);
 }
 
 .home-container a {
@@ -15,7 +15,8 @@
 }
 
 .home-container .nav-item a {
-  color: #e3c08d;
+  color: #fffff0;
+
 }
 
 .home-container .nav-item a.disabled {
@@ -64,4 +65,17 @@
   .sphere path {
     stroke-width: 0.4px;
   }
+}
+
+.home-container .animation-frame .container{
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.home-container .animation-frame svg{
+  fill: #fff;
+  width: 60%;
 }

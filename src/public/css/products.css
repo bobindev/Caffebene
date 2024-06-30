@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+  background: linear-gradient(-45deg, #4b2e2a, #7b4b3a, #b39283, #d4b4a1);
 }
 
 .products-container a {
@@ -15,7 +15,7 @@
 }
 
 .products-container .nav-item a {
-  color: #e3c08d;
+  color: #fffff0;
 }
 
 .products-container .nav-item a.disabled {
