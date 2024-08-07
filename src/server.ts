@@ -3,6 +3,9 @@ dotenv.config({
   path: process.env.NODE_ENV === "production" ? ".env.production" : ".env"
 });
 
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("MONGO_URL:", process.env.MONGO_URL);
+
 import mongoose from 'mongoose';
 import server from './app'; 
 
